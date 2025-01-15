@@ -1,9 +1,9 @@
 import { potions } from "../data/data";   
 import { filterByRarity } from "../helpers/filterByRarity";
 
-//LE PASO LA DATA DE POCIONES Y ELIJO UN NUMERO DE NIVEL LUEGO HAGO QUE ME DEVUELVA SOLO EL NOMBRE PARA HACER LA COMPROBACION
-describe('Filter the potions by usage required level', () => {
-	it('should filter correctly the potions', () => {
+//LE PASO LA DATA DE POCIONES Y ELIJO UNA RAREZA LUEGO HAGO QUE ME DEVUELVA SOLO EL NOMBRE PARA HACER LA COMPROBACION
+describe('Filter the potions by selected rarity', () => {
+	it('should filter correctly the potions by "legendary"', () => {
 		const filterPotions = filterByRarity(potions, "legendary")
         const resultName = []
         for (let i = 0; i < filterPotions.length; i++) {
@@ -15,6 +15,7 @@ describe('Filter the potions by usage required level', () => {
         expect(resultName[3]).toBe("Vial of Shifting Shadows");
         expect(resultName[4]).toBe("Elixir of Arcane Surge");
         expect(resultName[5]).toBe("Elixir of Shadows");
+        //AÑADO ESTA LINEA PARA COMPROBAR QUE NO HAY MAS
         expect(resultName[6]).toBe(undefined);
 	})
 })

@@ -1,9 +1,9 @@
 import { potions } from "../data/data";   
 import { findPotionByEffect } from "../helpers/findPotionByEffect";
 
-//LE PASO LA DATA DE POCIONES Y ELIJO UN NUMERO DE NIVEL LUEGO HAGO QUE ME DEVUELVA SOLO EL NOMBRE PARA HACER LA COMPROBACION
-describe('Filter the potions by usage required level', () => {
-	it('should filter correctly the potions', () => {
+//LE PASO LA DATA DE POCIONES Y ELIJO UN EFFECTO SECUNDARIO LUEGO DEVUELVO EL NOMBRE Y EL EFFECTO PARA HACER LA COMPROBACION
+describe('Filter the potions by usage a specific secondary effect', () => {
+	it('should filter correctly the potions using "stealth"', () => {
 		const filterPotions = findPotionByEffect(potions, "stealth")
         const resultName = []
         const resultSecondaryEffect = []
