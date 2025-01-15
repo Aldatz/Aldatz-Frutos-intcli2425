@@ -12,7 +12,7 @@ const PotionList: React.FC<ItemCarouselProps> = ({
   const [currentPage, setCurrentPage] = useState<number>(0);
 
   const PotionsPerRow = 10;
-
+    setCurrentPage
   const startIndex = currentPage * PotionsPerRow;
   const endIndex = startIndex + PotionsPerRow;
   const potionsToDisplay = potions.slice(startIndex, endIndex);
