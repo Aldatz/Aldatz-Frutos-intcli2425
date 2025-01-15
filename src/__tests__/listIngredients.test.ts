@@ -1,9 +1,9 @@
 import { potions } from "../data/data";
-import { listIngredients } from "../helpers/getOnePotionIngredients";
+import { listIngredients } from "../helpers/listIngredients";
 
-//LE PASO LA DATA DE POCIONES Y ELIJO UN NUMERO DE NIVEL LUEGO HAGO QUE ME DEVUELVA SOLO EL NOMBRE PARA HACER LA COMPROBACION
+//LE PASO UNA POCION EN ESPECIFICO PARA HECER LA COMPROBACION
 describe('Get the ingredients of a especific potion', () => {
-	it('should filter correctly the potions', () => {
+	it('should get correcty the ingredients if I use 5th potion', () => {
 		const result = listIngredients(potions[4])
 
         expect(result[0]).toBe("Arcane Crystal");
