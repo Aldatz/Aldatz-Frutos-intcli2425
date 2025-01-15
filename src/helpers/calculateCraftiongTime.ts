@@ -1,7 +1,7 @@
 import { Potion } from "../types/Potion";
 
 //FUNCION QUE CALCULA EL TIEMPO PARA QUE SE PREPAREN LAS POCIONES QUE HAS SELECCIONADO
-export function filterByLevelRequirement(potions: Potion[]) {
+export function calculateCraftingTime(potions: Potion[]) {
     let minutes = 0;
     let hours = 0;
     let totalTime = [];
@@ -17,5 +17,6 @@ export function filterByLevelRequirement(potions: Potion[]) {
         minutes -= 60;
         hours += 1;
     }
-    totalTime = [hours, minutes];
+    totalTime = [hours + " hours", minutes + " minutes"];
+    return totalTime;
 }
