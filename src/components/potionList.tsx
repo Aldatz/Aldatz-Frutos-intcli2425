@@ -15,9 +15,10 @@ const PotionList: React.FC<ItemCarouselProps> = ({
 
   const [selectedOption, setSelectedOption] = useState<string | any | null>(null);
   let filteredPotions = potions
-  if (selectedOption != "") {
+  if (selectedOption === "legendary" || selectedOption === "epic" || selectedOption === "mythic") {
     filteredPotions = filterByRarity(potions, selectedOption)
   }
+  console.log(selectedOption);
   
 
   const getTime = () => {
@@ -26,7 +27,7 @@ const PotionList: React.FC<ItemCarouselProps> = ({
 
   const PotionsPerRow = filteredPotions.length;
   const startIndex = 0;
-  const potionsToDisplay = potions.slice(startIndex, PotionsPerRow);
+  const potionsToDisplay = filteredPotions.slice(startIndex, PotionsPerRow);
 
   return (
     <div className='w-full rounded-3xl fixed inset-0 z-50 flex items-center justify-center'>
