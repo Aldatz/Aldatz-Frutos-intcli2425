@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import PotionCard from './potionCard';
 import { Potion } from '../types/Potion';
 
