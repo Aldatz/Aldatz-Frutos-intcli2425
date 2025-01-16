@@ -26,9 +26,6 @@ const PotionDetailModal: React.FC<PotionDetailModalProps> = ({
                     X
                 </button>
                 <ul className="m-12">
-                    <li><p className="mb-4 text-3xl text-white leading-4 font-bold mt-8">{potion.name}</p></li>
-                    <li><p className="mb-4 text-xl text-white leading-4">Rarity: {potion.rarity}</p></li>
-
                     <li><p className="mb-4 text-3xl text-white leading-4 font-bold mt-8">Effects:</p></li>
                     <li><p className="mb-4 text-xl text-white leading-4">{potion.effects.primary.attribute + ": " + potion.effects.primary.duration.amount + " " + potion.effects.primary.duration.unit}</p></li>
                     {potion.effects.secondary.map((secondary: SecondaryEffect) => (
@@ -39,8 +36,7 @@ const PotionDetailModal: React.FC<PotionDetailModalProps> = ({
                     {potion.ingredients.map((ingredients: Ingredient) => (
                         <li><p className="mb-4 text-xl text-white leading-4">{ingredients.name + ": " + ingredients.origin.region + ", " + ingredients.origin.location}</p></li>
                     ))}
-                    </ul>
-                    <ul>
+                    
                     <li><p className="mb-4 text-3xl text-white leading-4 font-bold mt-8">Requirements:</p></li>
                     <li><p className="mb-4 text-xl text-white leading-4">Required level: {potion.usage.restrictions.levelRequirement}</p></li>
                     <li><p className="mb-4 text-xl text-white leading-4">Class:
@@ -48,7 +44,7 @@ const PotionDetailModal: React.FC<PotionDetailModalProps> = ({
                             classRestrictions + ", "
                         ))}
                    </p></li>
-
+               
                     <li><p className="mb-4 text-3xl text-white leading-4 font-bold mt-8">Warnings:</p></li>
                     {potion.usage.restrictions.warnings.map((warnings: string) => (
                         <li><p className="mb-4 text-xl text-white leading-4">{warnings}</p></li>
