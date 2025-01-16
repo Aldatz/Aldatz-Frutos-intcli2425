@@ -19,11 +19,11 @@ const PotionCard: React.FC<ItemCardProps> = ({
   const closeModal = () => {
     setIsModalOpen(false);
   };
-  
+
   return (
     <>
       <div
-        className="relative w-full h-auto p-4 bg-black/60 border border-gold text-gray-200 shadow-md cursor-pointer 
+        className="relative w-[250px] h-[300px] p-4 bg-black/60 border border-gold text-gray-200 shadow-md cursor-pointer 
                    hover:scale-[1.02] transition-transform duration-200 flex flex-col potions-center justify-start items-center rounded-lg"
       >
         <img
