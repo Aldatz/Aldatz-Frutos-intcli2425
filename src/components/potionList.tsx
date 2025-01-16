@@ -9,13 +9,10 @@ interface ItemCarouselProps {
 const PotionList: React.FC<ItemCarouselProps> = ({
     potions,
 }) => {
-  const [currentPage, setCurrentPage] = useState<number>(0);
 
-  const PotionsPerRow = 10;
-    setCurrentPage
-  const startIndex = currentPage * PotionsPerRow;
-  const endIndex = startIndex + PotionsPerRow;
-  const potionsToDisplay = potions.slice(startIndex, endIndex);
+  const PotionsPerRow = potions.length;
+  const startIndex = 0;
+  const potionsToDisplay = potions.slice(startIndex, PotionsPerRow);
 
   return (
     <div>
