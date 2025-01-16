@@ -7,6 +7,6 @@ describe('Get the ingredients of a especific potion', () => {
         const selectedPotions = [potions[1], potions[1], potions[5], potions[9]]
 		const result = calculateCraftingTime(selectedPotions)
 
-        expect(result[0] + ", " + result[1]).toBe("7 hours" + ", " + "45 minutes");
+        expect(result[0]).toBe("7 hours" + " " + "45 minutes");
 	})
 })

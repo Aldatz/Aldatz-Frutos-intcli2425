@@ -14,6 +14,8 @@ const PotionList: React.FC<ItemCarouselProps> = ({
 }) => {
 
   const [selectedOption, setSelectedOption] = useState<string | any | null>(null);
+  const [time, setTime] = useState<string | any | null>(null);
+
   let filteredPotions = potions
   if (selectedOption === "legendary" || selectedOption === "epic" || selectedOption === "mythic") {
     filteredPotions = filterByRarity(potions, selectedOption)
@@ -22,7 +24,8 @@ const PotionList: React.FC<ItemCarouselProps> = ({
   
 
   const getTime = () => {
-    calculateCraftingTime(filteredPotions)
+    const timeget = calculateCraftingTime(filteredPotions)
+    setTime(timeget)
   };
 
   const PotionsPerRow = filteredPotions.length;
@@ -44,17 +47,19 @@ const PotionList: React.FC<ItemCarouselProps> = ({
       ) : (
         <p>No potions available.</p>
       )}
-      <div className='absolute top-8'>
+      <div className='absolute top-8 grid grid-flow-col auto-cols-max'>
         <div className='bottom-16'>
           <DropDown
             setSelectedOption={setSelectedOption}>
           </DropDown>
         </div>
         <div className='bottom-16'>
-          <button
+          <button  className="bg-black bg-opacity-70 text-white text-xl font-semibold py-2 px-4 rounded-lg shadow-md 
+        hover:bg-neutral-800 hover:bg-opacity-70 border-sepia border-2 mt-2"
           onClick={getTime}>
-
+            Get Time
           </button>
+          {time}
         </div>
       </div>
     </div>

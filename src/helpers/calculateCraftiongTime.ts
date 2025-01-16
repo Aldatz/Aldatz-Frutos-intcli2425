@@ -17,6 +17,6 @@ export function calculateCraftingTime(potions: Potion[]) {
         minutes -= 60;
         hours += 1;
     }
-    totalTime = [hours + " hours", minutes + " minutes"];
+    totalTime = [hours + " hours" + " " + minutes + " minutes"];
     return totalTime;
 }
