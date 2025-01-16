@@ -6,7 +6,7 @@ export function findPotionByEffect(potions: Potion[], secondaryEffect: string) {
     let counter = 0;
     for (let i = 0; i < potions.length; i++) {
         for (let j = 0; j < potions[i].effects.secondary.length; j++) {
-            if (potions[i].effects.secondary[j].attribute.includes(secondaryEffect)) {
+            if (potions[i].effects.secondary[j].attribute.includes(secondaryEffect) && potions[i] != filteredPotionArray[counter - 1]) {
                 filteredPotionArray[counter] = potions[i];
                 counter += 1;
             }
